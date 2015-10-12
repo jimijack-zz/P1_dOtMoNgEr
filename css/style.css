@@ -7,13 +7,14 @@ body {
 header {
 	margin: 5px auto;
 	height: 125px;
-	width: 500px;
+	width: 750px;
 	border: 1px solid red;
 	text-align: center;
 	justify-content: center;
-	font-size: 75px;
+	font-size: 100px;
 	color: white;
 	font-family: Copperplate;
+	text-shadow: 1px 1px 1px #000;
 }
 
 #top {
@@ -37,6 +38,11 @@ header {
 
 #p1Row {
 	color: white;
+	background-color: black;
+	border: 2px solid white;
+	font-family: Papyrus;
+	font-size: 18px;
+	opacity: 0.65;
 }
 
 #p1Score {
@@ -63,6 +69,15 @@ header {
 	text-align: center;
 	background: url(https://i.imgur.com/CukhhkA.png) no-repeat;
 	background-size: 150px;
+}
+
+#compRow {
+	color: white;
+	background-color: black;
+	border: 2px solid white;
+	font-family: Papyrus;
+	font-size: 18px;
+	opacity: 0.65;
 }
 
 #compScore {
