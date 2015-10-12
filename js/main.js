@@ -1,92 +1,117 @@
 $(document).ready(function() {
 
-var shuffle;
-var battle;
-var newDeal;
+// * (variable) deckOfCards:    a single deck that represents the working deck
+// * (variable) deckIsShuffled: a bool describing if the deck is shuffled or 
+// *                            sorted
+// *
+// * (function) shuffle:          shuffle (or re-shuffle) the current deckOfCards
+// * (function) sort:             sort the current deckOfCards
+// * (function) pickRandom:       pick a random card from the deckOfCards - only 
+// *                              useful when the deck is sorted, since you can 
+// *                              just pop off of the top of a shuffled deck!
+// * (function) dealDeck:         returns a full deck of cards, sorted
+// * (function) resetDeckOfCards: resets the deckOfCards to a full deck, sorted
+// *
+// */
 
-var deck = [
-	{ card: 'Ace of Spades', value: 52 },
-	{ card: 'Ace of Hearts', value: 51 },
-	{ card: 'Ace of Diamonds', value: 50 },
-	{ card: 'Ace of Clubs', value: 49 },
-	{ card: 'King of Spades', value: 48 },
-	{ card: 'King of Hearts', value: 47 },
-	{ card: 'King of Diamonds', value: 46 },
-	{ card: 'King of Clubs', value: 45 },
-	{ card: 'Queen of Spades', value: 44 },
-	{ card: 'Queen of Hearts', value: 43 },
-	{ card: 'Queen of Diamonds', value: 42 },
-	{ card: 'Queen of Clubs', value: 41 },
-	{ card: 'Jack of Spades', value: 40 },
-	{ card: 'Jack of Hearts', value: 39 },
-	{ card: 'Jack of Diamonds', value: 38 },
-	{ card: 'Jack of Clubs', value: 37 },
-	{ card: 'Ten of Spades', value: 36 },
-	{ card: 'Ten of Hearts', value: 35 },
-	{ card: 'Ten of Diamonds', value: 34 },
-	{ card: 'Ten of Clubs', value: 33 },
-	{ card: 'Nine of Spades', value: 32 },
-	{ card: 'Nine of Hearts', value: 31 },
-	{ card: 'Nine of Diamonds', value: 30 },
-	{ card: 'Nine of Clubs', value: 29 },
-	{ card: 'Eight of Spades', value: 28 },
-	{ card: 'Eight of Hearts', value: 27 },
-	{ card: 'Eight of Diamonds', value: 26 },
-	{ card: 'Eight of Clubs', value: 25 },
-	{ card: 'Seven of Spades', value: 24 },
-	{ card: 'Seven of Hearts', value: 23 },
-	{ card: 'Seven of Diamonds', value: 22 },
-	{ card: 'Seven of Clubs', value: 21 },
-	{ card: 'Six of Spades', value: 20 },
-	{ card: 'Six of Hearts', value: 19 },
-	{ card: 'Six of Diamonds', value: 18 },
-	{ card: 'Six of Clubs', value: 17 },
-	{ card: 'Five of Spades', value: 16 },
-	{ card: 'Five of Hearts', value: 15 },
-	{ card: 'Five of Diamonds', value: 14 },
-	{ card: 'Five of Clubs', value: 13 },
-	{ card: 'Four of Spades', value: 12 },
-	{ card: 'Four of Hearts', value: 11 },
-	{ card: 'Four of Diamonds', value: 10 },
-	{ card: 'Four of Clubs', value: 09 },
-	{ card: 'Three of Spades', value: 08 },
-	{ card: 'Three of Hearts', value: 07 },
-	{ card: 'Three of Diamonds', value: 06 },
-	{ card: 'Three of Clubs', value: 05 },
-	{ card: 'Two of Spades', value: 04 },
-	{ card: 'Two of Hearts', value: 03 },
-	{ card: 'Two of Diamonds', value: 02 },
-	{ card: 'Two of Clubs', value: 01 },
-]
+function isFunction(functionToCheck) {
+   var getType = {};
+   return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
+}
 
+// create globally accessible variables
+var deckOfCards,
+    deckIsShuffled,
+    shuffle,
+    sort,
+    pickRandom,
+    dealDeck,
+    resetDeckOfCards,
+    _ = _ || undefined;
 
-	$('.b1').click(function () {
-    	alert('Shuffle Button clicked');
-	});
+// ensure that Lodash is loaded before defining methods that use it
+if (!isFunction(_)) {
+  console.log("> ERROR: make sure that you load lodash with a script tag before card.js!");
+  console.log("> Lodash can be found at: cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.js");
+} else {
+  console.log("Lodash is loaded... ready to go!");
 
-	$('.b2').click(function () {
-    	alert('Battle Button clicked');
-	});
+  // always load lodash for its methods "shuffle", "sortBy" and "sample" 
+  // (pick random)
+  // shuffle: https://lodash.com/docs#shuffle
+  // sortBy:  https://lodash.com/docs#sortBy
+  // sample:  https://lodash.com/docs#sample
+  // remove:  https://lodash.com/docs#remove
+  
+  var cards = [
+    "dA","dK","dQ","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02",
+    "cA","cK","cQ","cJ","c10","c09","c08","c07","c06","c05","c04","c03","c02",
+    "hA","hK","hQ","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02",
+    "sA","sK","sQ","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"
+  ]; // jW, jR, jB
 
-	$('.b3').click(function () {
-    	alert('Deal Button clicked');
-	});
+  var cardValue = function(card) {
+    return cards.indexOf(card);
+  };
 
-});
-
-
-
-
-
-
-
-function compare(a, b) {
-  if (a is less than b by some ordering criterion) {
-    return -1;
+  dealDeck = function() {
+    return cards;
   }
-  if (a is greater than b by the ordering criterion) {
-    return 1;
+
+  resetDeckOfCards = function() {
+    deckIsShuffled = false;
+    return deckOfCards = dealDeck();
   }
-  // a must be equal to b
-  return 0;
+
+  shuffle = function() {
+    deckIsShuffled = true;
+    return deckOfCards = _.shuffle(deckOfCards);
+  };
+
+  sort = function() {
+    deckIsShuffled = false;
+    return deckOfCards = _.sortBy(deckOfCards, cardValue);
+  };
+
+  pickRandom = function() {
+    var card = _.sample(deckOfCards);
+    deckOfCards = _.remove(deckOfCards, function(c) { return c !== card; });
+    return card;
+  };
+
+  resetDeckOfCards();
+}
+
+//var cardValue = function(card) {
+  //  return cards.indexOf(card);
+  //};
+	
+
+
+//	$('.b1').click(function () {
+//    	alert('Shuffle Button clicked');
+//	});
+
+//	$('.b2').click(function () {
+//    	alert('Battle Button clicked');
+//	});
+
+//	$('.b3').click(function () {
+//    	alert('Deal Button clicked');
+//	});
+
+// });
+
+
+
+//function compare(a, b) {
+//  if (a is less than b by some ordering criterion) {
+//    return -1;
+//  }
+//  if (a is greater than b by the ordering criterion) {
+//    return 1;
+//  }
+//  // a must be equal to b
+//  return 0;
+
 }
