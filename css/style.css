@@ -1,13 +1,18 @@
 body {
 	border: 2px solid purple;
 	margin: auto;
+	background: url(http://images5.alphacoders.com/314/314903.jpg);
 }
 
 header {
 	margin: 5px auto;
 	height: 125px;
-	width: auto;
+	width: 500px;
 	border: 1px solid red;
+	text-align: center;
+	background: url(https://i.imgur.com/5ytVqvY.png);
+	background-repeat: center;
+	background-size: contain;
 }
 
 #top {
@@ -15,6 +20,32 @@ header {
 	height: 125px;
 	width: auto;
 	border: 1px solid blue;
+	display: flex;
+	justify-content: space-between;
+}
+
+.p1Score {
+	border: 2px solid blue;
+	height: 125px;
+	width: 125px;
+	margin: 0px 100px;
+	text-align: center;
+}
+
+.winnerTicker {
+	margin: 50px auto;
+	border: 2px solid blue;
+	height: 50px;
+	width: 200px;
+	text-align: center;
+}
+
+.compScore {
+	border: 2px solid blue;
+	height: 125px;
+	width: 125px;
+	margin: 0px 100px;
+	text-align: center;
 }
 
 #board {
@@ -43,12 +74,14 @@ header {
 	border: 2px solid green;
 	width: 200px;
 	height: 300px;
+	text-align: center;
 }
 
 .comp1 {
 	border: 2px solid green;
 	width: 200px;
 	height: 300px;
+	text-align: center;
 }
 
 #board div:nth-child(4) {
