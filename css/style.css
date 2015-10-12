@@ -11,17 +11,53 @@ header {
 }
 
 #top {
-	margin: 5px auto;
+	margin: 10px auto;
 	height: 125px;
 	width: auto;
 	border: 1px solid blue;
 }
 
 #board {
-	margin: 5px 10px;
+	margin: 20px 20px;
 	height: 300px;
 	width: auto;
 	border: 1px solid green;
+	display: flex;
+	justify-content: space-between;
+}
+
+#board div {
+	display: inline-block;
+}
+
+#board div:first-child {
+	border: 1px solid green;
+	width: 85px;
+	height: 250px;
+	font-size: 20px;
+	color: gray;
+	text-align: center;
+}
+
+.player1 {
+	border: 2px solid green;
+	width: 200px;
+	height: 300px;
+}
+
+.comp1 {
+	border: 2px solid green;
+	width: 200px;
+	height: 300px;
+}
+
+#board div:nth-child(4) {
+	border: 1px solid green;
+	width: 85px;
+	height: 250px;
+	font-size: 20px;
+	color: gray;
+	text-align: center;
 }
 
 #buttons {
