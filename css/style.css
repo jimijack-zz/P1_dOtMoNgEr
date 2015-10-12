@@ -1,0 +1,46 @@
+body {
+	border: 2px solid purple;
+	margin: auto;
+}
+
+header {
+	margin: 5px auto;
+	height: 125px;
+	width: auto;
+	border: 1px solid red;
+}
+
+#top {
+	margin: 5px auto;
+	height: 125px;
+	width: auto;
+	border: 1px solid blue;
+}
+
+#board {
+	margin: 5px 10px;
+	height: 300px;
+	width: auto;
+	border: 1px solid green;
+}
+
+#buttons {
+	margin: 5px 150px;
+	height: 125px;
+	width: auto;
+	border: 1px solid orange;
+	font-family: futura;
+	font-size: 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+#buttons div {
+	display: inline-block;
+	border: 1px solid gray;
+	width: 150px;
+	height: 30px;
+	text-align: center;
+	padding: 15px 0px 10px;
+}
+
