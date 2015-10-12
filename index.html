@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>WAR-dotMonger</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/main.js"></script>
 </head>
 <body>
 	<header>
@@ -11,9 +12,27 @@
 	</header>
 	<main>
 		<section id="top">
-			<div class="p1Score">P1 Score Here</div>
+			<div class="p1ScoreBox">
+				<table>
+					<tr id="p1Row">
+						<td>Player</td>
+					</tr>
+					</tr>
+						<td id="p1Score">0</td>
+					</tr>
+				</table>
+			</div>
 			<div class="winnerTicker">"WINNER!"</div>
-			<div class="compScore">Comp Score Here</div>
+			<div class="compScoreBox">
+				<table>
+					<tr id="compRow">
+						<td>Computer</td>
+					</tr>
+					</tr>
+						<td id="compScore">0</td>
+					</tr>
+				</table>
+			</div>
 		</section>
 		<section id="board">
 			<div>P1 Tie-Break Column</div>
@@ -22,11 +41,16 @@
 			<div>Comp Tie-Break Column</div>
 		</section>
 		<section id="buttons">
-			<div class="b1">SHUFFLE</div>
-			<div class="b2">BATTLE</div>
-			<div class="b3">DEAL</div>
+			<div class="b1">
+				<button type="button">SHUFFLE</button>
+			</div>
+			<div class="b2">
+				<button type="button">BATTLE</button>
+			</div>
+			<div class="b3">
+				<button type="button">DEAL</button>
+			</div>
 		</section>
-	</main>
-	<script src="js/main.js"></script>	
+	</main>	
 </body>
 </html>

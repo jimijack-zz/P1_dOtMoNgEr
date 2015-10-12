@@ -10,9 +10,10 @@ header {
 	width: 500px;
 	border: 1px solid red;
 	text-align: center;
-	background: url(https://i.imgur.com/5ytVqvY.png);
-	background-repeat: center;
-	background-size: contain;
+	justify-content: center;
+	font-size: 75px;
+	color: white;
+	font-family: Copperplate;
 }
 
 #top {
@@ -24,12 +25,26 @@ header {
 	justify-content: space-between;
 }
 
-.p1Score {
+.p1ScoreBox {
 	border: 2px solid blue;
 	height: 125px;
 	width: 125px;
 	margin: 0px 100px;
 	text-align: center;
+	background: url(https://i.imgur.com/bFx2sf9.png) no-repeat;
+	background-size: 150px;
+}
+
+#p1Row {
+	color: white;
+}
+
+#p1Score {
+	border: 1px solid black;
+	font-size: 75px;
+	color: white;
+	justify-content: center;
+	width: 125px;
 }
 
 .winnerTicker {
@@ -40,12 +55,22 @@ header {
 	text-align: center;
 }
 
-.compScore {
+.compScoreBox {
 	border: 2px solid blue;
 	height: 125px;
 	width: 125px;
 	margin: 0px 100px;
 	text-align: center;
+	background: url(https://i.imgur.com/CukhhkA.png) no-repeat;
+	background-size: 150px;
+}
+
+#compScore {
+	border: 1px solid black;
+	font-size: 75px;
+	color: white;
+	justify-content: center;
+	width: 125px;
 }
 
 #board {
@@ -72,6 +97,7 @@ header {
 
 .player1 {
 	border: 2px solid green;
+	border-radius: 15px;
 	width: 200px;
 	height: 300px;
 	text-align: center;
@@ -79,6 +105,7 @@ header {
 
 .comp1 {
 	border: 2px solid green;
+	border-radius: 15px;
 	width: 200px;
 	height: 300px;
 	text-align: center;
@@ -95,7 +122,7 @@ header {
 
 #buttons {
 	margin: 5px 150px;
-	height: 125px;
+	height: 100px;
 	width: auto;
 	border: 1px solid orange;
 	font-family: futura;
@@ -106,10 +133,37 @@ header {
 
 #buttons div {
 	display: inline-block;
-	border: 1px solid gray;
-	width: 150px;
+	border: 2px solid #585858;
+	width: 175px;
 	height: 30px;
 	text-align: center;
 	padding: 15px 0px 10px;
 }
 
+button {
+	justify-content: center;
+	font-family: Copperplate;
+	font-size: 15px;
+	border-radius: 5px;
+}
+
+.b1 {
+	background: url(https://i.imgur.com/gchNMy3.png);
+	background-position: center;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px 1px #848484;
+}
+
+.b2 {
+	background: url(https://i.imgur.com/Ecwe9gp.png);
+	background-position: center;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px 1px #848484;
+}
+
+.b3 {
+	background: url(https://i.imgur.com/gchNMy3.png);
+	background-position: center;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px 1px #848484;
+}
