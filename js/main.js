@@ -29,12 +29,6 @@ var deckOfCards,
     resetDeckOfCards,
     _ = _ || undefined;
 
-// ensure that Lodash is loaded before defining methods that use it
-if (!isFunction(_)) {
-  console.log("> ERROR: make sure that you load lodash with a script tag before card.js!");
-  console.log("> Lodash can be found at: cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.js");
-} else {
-  console.log("Lodash is loaded... ready to go!");
 
   // always load lodash for its methods "shuffle", "sortBy" and "sample" 
   // (pick random)
@@ -49,6 +43,38 @@ if (!isFunction(_)) {
     "hA","hK","hQ","hJ","h10","h09","h08","h07","h06","h05","h04","h03","h02",
     "sA","sK","sQ","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"
   ]; // jW, jR, jB
+
+  var cardRank = {
+  	sA : 52, hA : 51, dA : 50, cA : 49, 
+	sK : 48, hK : 47, dK : 46, cK : 45,
+	sQ : 44, hQ : 43, dQ : 42, cQ : 41,
+	sJ : 40, hJ : 39, dJ : 38, cJ : 37,
+	s10 : 36, h10 : 35, d10 : 34, c10 : 33,
+	s09 : 32, h09 : 31, d09 : 30, c09 : 29,
+	s08 : 28, h08 : 27, d08 : 26, c08 : 25,
+	s07 : 24, h07 : 23, d07 : 22, c07 : 21,
+	s06 : 20, h06 : 19, d06 : 18, c06 : 17,
+	s05 : 16, h05 : 15, d05 : 14, c05 : 13,
+	s04 : 12, h04 : 11, d04 : 10, c04 : 9,
+	s03 : 8, h03 : 7, d03 : 6, c03 : 5,
+	s02 : 4, h02 : 3, d02 : 2, c02 : 1
+  }
+
+
+var battle = function() {
+	//score()
+	//render()
+	//next battle logic (more increment points left and right)
+}
+
+//if left score is greater than right score, display winner left, else winner right.
+
+//score function last
+//score render battle, 
+
+var playerCard = 0;
+var compCard = 51;
+  console.log(cardRank[cards[leftCard]] > cardRank[cards[rightCard]]);
 
   var cardValue = function(card) {
     return cards.indexOf(card);
@@ -80,7 +106,7 @@ if (!isFunction(_)) {
   };
 
   resetDeckOfCards();
-}
+
 
 //var cardValue = function(card) {
   //  return cards.indexOf(card);
@@ -91,6 +117,8 @@ if (!isFunction(_)) {
 //	$('.b1').click(function () {
 //    	alert('Shuffle Button clicked');
 //	});
+
+$('.b1').click(shuffle);
 
 //	$('.b2').click(function () {
 //    	alert('Battle Button clicked');
@@ -114,4 +142,4 @@ if (!isFunction(_)) {
 //  // a must be equal to b
 //  return 0;
 
-}
+});

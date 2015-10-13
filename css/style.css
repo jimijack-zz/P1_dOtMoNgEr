@@ -101,6 +101,7 @@ header {
 	display: inline-block;
 }
 
+/**
 #board div:first-child {
 	border: 1px solid green;
 	width: 85px;
@@ -109,7 +110,7 @@ header {
 	color: gray;
 	text-align: center;
 }
-
+*/
 .player1 {
 	border: 2px solid green;
 	border-radius: 15px;
@@ -125,7 +126,7 @@ header {
 	height: 300px;
 	text-align: center;
 }
-
+/**
 #board div:nth-child(4) {
 	border: 1px solid green;
 	width: 85px;
@@ -134,7 +135,7 @@ header {
 	color: gray;
 	text-align: center;
 }
-
+*/
 #buttons {
 	margin: 5px 150px;
 	height: 100px;
