@@ -59,6 +59,8 @@ header {
 	height: 50px;
 	width: 200px;
 	text-align: center;
+	font-family: Papyrus;
+	font-size: 35px;
 }
 
 .compScoreBox {

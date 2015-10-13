@@ -44,6 +44,14 @@ var deckOfCards,
     "sA","sK","sQ","sJ","s10","s09","s08","s07","s06","s05","s04","s03","s02"
   ]; // jW, jR, jB
 
+  //Assigning images to each card...
+  function cardImages(){
+  cards[0] = new Image(50, 50);
+  cards[0].src = "blank.gif";
+  
+} // end initialize 
+
+
   var cardRank = {
   	sA : 52, hA : 51, dA : 50, cA : 49, 
 	sK : 48, hK : 47, dK : 46, cK : 45,

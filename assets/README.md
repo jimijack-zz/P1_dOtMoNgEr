@@ -70,3 +70,16 @@
 9.) When a winner is declared after all cards played, **alert "Winner is ' '!"**
 
 10.) Click "**Shuffle Cards**" to clear game, randomize deck and deal to players.
+
+-----
+###MVP Functionality - THIS is the game.
+
+
+- Assign an image for each value in the **deck**[array].
+- "**Shuffle/Deal**" button used to clear out gameboard, randomize card deck(array).
+- "**Battle**" button selects the first and last position of the shuffled deck and assignes to "**player**" and "**computer**".  The "**player**" position receives the low position in the array while the "**computer**" receives the high position in the randomized array.
+	- Corresponding card image is assigned to "**playerCard**" area and "**computerCard**" area.
+	- If **value** of "**playerCard**" is greater than the value of "**computerCard**", display "Winner is (player)!" and increase "**playerScore**" +1.
+		- else (do the same for computer).
+- When all cards in the array have been played, alert "**(Player or Computer) wins the WAR, damn dotMongers...**".
+	- Click "**OK**", bring up new **alert** "Click **Shuffle/Deal** for new game."
