@@ -6,7 +6,7 @@ body {
 
 header {
 	margin: 5px auto;
-	height: 125px;
+	height: 100px;
 	width: 750px;
 	border: 1px solid red;
 	text-align: center;
@@ -54,13 +54,13 @@ header {
 }
 
 .winnerTicker {
-	margin: 50px auto;
+	margin: 25px auto;
 	border: 2px solid blue;
-	height: 50px;
-	width: 200px;
+	height: 75px;
+	width: 350px;
 	text-align: center;
 	font-family: Papyrus;
-	font-size: 35px;
+	font-size: 65px;
 }
 
 .compScoreBox {
@@ -92,7 +92,7 @@ header {
 
 #board {
 	margin: 20px 20px;
-	height: 300px;
+	height: 275px;
 	width: auto;
 	border: 1px solid green;
 	display: flex;
@@ -116,16 +116,20 @@ header {
 .player1 {
 	border: 2px solid green;
 	border-radius: 15px;
+	background: url(https://s-media-cache-ak0.pinimg.com/236x/58/17/85/581785ed38d3e41c25a22163c845abec.jpg) no-repeat;
+	background-position: center;
 	width: 200px;
-	height: 300px;
+	height: 275px;
 	text-align: center;
 }
 
 .comp1 {
 	border: 2px solid green;
 	border-radius: 15px;
+	background: url(https://s-media-cache-ak0.pinimg.com/236x/f8/60/22/f86022bc63eb9eca83eba7465646bff9.jpg) no-repeat;
+	background-position: center;
 	width: 200px;
-	height: 300px;
+	height: 275px;
 	text-align: center;
 }
 /**
@@ -152,36 +156,51 @@ header {
 #buttons div {
 	display: inline-block;
 	border: 2px solid #585858;
-	width: 175px;
-	height: 30px;
+	width: 275px;
+	height: 50px;
 	text-align: center;
 	padding: 15px 0px 10px;
 }
 
-button {
+.b1 {
+	background: url(https://i.imgur.com/zat4pOo.png);
+	background-position: center;
 	justify-content: center;
+	margin: -15px auto;
 	font-family: Copperplate;
-	font-size: 15px;
-	border-radius: 5px;
+	color: white;
+	-webkit-text-stroke: 1px black;
+	text-shadow: 5px 5px 2px #000;
+	font-size: 35px;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px 1px #848484;
+	width: 275px;
+	height: 75px;
 }
 
-.b1 {
-	background: url(https://i.imgur.com/gchNMy3.png);
+/*.b1 {
+	background: url(https://i.imgur.com/zat4pOo.png);
 	background-position: center;
 	border-radius: 10px;
 	box-shadow: 3px 3px 5px 1px #848484;
-}
+	font-size: 25px;
+	font-family: Copperplate;
+	color: white;
+	text-shadow: 1px 1px 1px #000; 
+}*/
 
 .b2 {
-	background: url(https://i.imgur.com/Ecwe9gp.png);
+	background: url(https://i.imgur.com/oG7DjjC.png);
 	background-position: center;
+	justify-content: center;
+	margin: -15px auto;
+	font-family: Copperplate;
+	color: white;
+	-webkit-text-stroke: 1px black;
+	text-shadow: 5px 5px 2px #000;
+	font-size: 35px;
 	border-radius: 10px;
 	box-shadow: 3px 3px 5px 1px #848484;
-}
-
-.b3 {
-	background: url(https://i.imgur.com/gchNMy3.png);
-	background-position: center;
-	border-radius: 10px;
-	box-shadow: 3px 3px 5px 1px #848484;
+	width: 275px;
+	height: 75px;
 }
