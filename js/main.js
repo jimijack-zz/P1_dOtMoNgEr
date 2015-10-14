@@ -72,6 +72,7 @@ $(".b1").click(function goToWar() {
   warOver = false;
   cards = _.shuffle(cards);
   $(".b2").removeAttr("disabled");
+  $(".winnerTicker").html("Let the Battles BEGIN!");
 });
 
 
@@ -87,6 +88,7 @@ $(".b2").click(function battle() {
   score();
   if (playerCard === 25) warOver = true;
   render();
+  gameOver();
 });
 
 //Scoring variables and functions below
@@ -102,7 +104,6 @@ function score() {
 };
 
 //Rendering scores and winner
-var winner = $("#winnerTicker");
 
 function render() {
     $("#playerScore").html(playerScore.toString());
@@ -112,13 +113,20 @@ function render() {
     if (cards[playerCard].rank > cards[compCard].rank) {
       $(".winnerTicker").html("Player Wins");
     } else if (cards[playerCard].rank < cards[compCard].rank) {
-      $(".winnerTicker").html("Comp Wins");
+        $(".winnerTicker").html("Comp Wins");
     }
 };
 
 
 //When the game ("WAR") ends.
 function gameOver() {
+    if (playerScore === 21) {
+      $(".winnerTicker").html("WAR is WON. Way to Kill 'em Player1.");
+      $("#title").html("PLAYER1");
+    } else if (compScore === 21) {
+        $(".winnerTicker").html("WAR is WON... by the Comp. Get it together Player1.");
+        $("#title").html("COMPUTER");
+    }
   //if (warOver = true) && (playerScore > compScore){
   //  alert("Player1 destroyed you.")
   //} else if (warOver = true) && (playerScore < compScore) {
@@ -126,7 +134,7 @@ function gameOver() {
   //} else {
   //  warOver = false;
   //}
-}
+};
 
 
 //if left score is greater than right score, display winner left, else winner right.
