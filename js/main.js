@@ -1,30 +1,11 @@
 $(document).ready(function() {
 
-// * (variable) deckOfCards:    a single deck that represents the working deck
-// * (variable) deckIsShuffled: a bool describing if the deck is shuffled or 
-// *                            sorted
-// *
-// * (function) shuffle:          shuffle (or re-shuffle) the current deckOfCards
-// * (function) sort:             sort the current deckOfCards
-// * (function) pickRandom:       pick a random card from the deckOfCards - only 
-// *                              useful when the deck is sorted, since you can 
-// *                              just pop off of the top of a shuffled deck!
-// * (function) dealDeck:         returns a full deck of cards, sorted
-// * (function) resetDeckOfCards: resets the deckOfCards to a full deck, sorted
-// *
-// */
-
-function isFunction(functionToCheck) {
-   var getType = {};
-   return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
-}
-
 // create globally accessible variables
-var playerCard,
-    compCard,
-    playerScore,
-    compScore,
-    winTicker;
+  var playerCard,
+      compCard,
+      playerScore,
+      compScore,
+      warOver;
 
 //================
   
@@ -81,42 +62,42 @@ var playerCard,
     {name: "d02", rank: 3, image: "cards/card-starter/images/hearts/hearts-r02.svg"},
     {name: "h02", rank: 2, image: "cards/card-starter/images/diamonds/diamonds-r02.svg"},
     {name: "c02", rank: 1, image: "cards/card-starter/images/clubds/clubs-r02.svg"},
-  ]; // jW, jR, jB
+  ];
 
 
-  //var cardRank = {
-  //	sA : 52, hA : 51, dA : 50, cA : 49, 
-	//sK : 48, hK : 47, dK : 46, cK : 45,
-	//sQ : 44, hQ : 43, dQ : 42, cQ : 41,
-	//sJ : 40, hJ : 39, dJ : 38, cJ : 37,
-	//s10 : 36, h10 : 35, d10 : 34, c10 : 33,
-	//s09 : 32, h09 : 31, d09 : 30, c09 : 29,
-	//s08 : 28, h08 : 27, d08 : 26, c08 : 25,
-	//s07 : 24, h07 : 23, d07 : 22, c07 : 21,
-	//s06 : 20, h06 : 19, d06 : 18, c06 : 17,
-	//s05 : 16, h05 : 15, d05 : 14, c05 : 13,
-	//s04 : 12, h04 : 11, d04 : 10, c04 : 9,
-	//s03 : 8, h03 : 7, d03 : 6, c03 : 5,
-	//s02 : 4, h02 : 3, d02 : 2, c02 : 1
-  //}
+
+$(".b1").click(function goToWar() {
+  playerCard = compCard = null;
+  playerScore = compScore = null;
+  warOver = false;
+  _.shuffle(cards);
+});
 
 
-var shuffleDeal = function() {
-  //*clears out the board and all blocks
-  //*randomizes the "cards" array for use during war.
+$(".b2").click(function battle() {
+	if (playerCard = null) {
+      playerCard = (cards[0]);
+      compCard = (cards[51]);
+  } else {
+  playerCard += 1;
+  compCard += 1;
+    } if (playerCard = (cards[25])) {
+      warOver = true;
+    } else {
+      warOver = false;
+    }
+});
+
+function gameOver() {
+  if (warOver = true) && (playerScore > compScore){
+    alert("Player1 destroyed you.")
+  } else if (warOver = true) && (playerScore < compScore) {
+    alert("Comp1 destroyed you.")
+  } else {
+    warOver = false;
+  }
 }
 
-
-var battle = function() {
-	//score()
-	//render()
-	//next battle logic (more increment points left and right)
-  //*Player grabs [firstPosition] in array (displayed in "Player Card Goes Here" board div "player1")
-  // while Computer grabs [lastPosition] in randomized array (to be displayed in "Comp Card Goes Here" board div "comp1")
-
-  //IF playerCard rank > compCard rank, playerScore + 1 (to be displayed in "p1ScoreBox")
-  //else compScore + 1; (to be displayed in "compScoreBox")
-}
 
 //if left score is greater than right score, display winner left, else winner right.
 

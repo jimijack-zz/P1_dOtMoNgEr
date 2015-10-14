@@ -1,5 +1,5 @@
 body {
-	border: 2px solid purple;
+	border: 0px solid purple;
 	margin: auto;
 	background: url(http://images5.alphacoders.com/314/314903.jpg);
 }
@@ -8,7 +8,7 @@ header {
 	margin: 5px auto;
 	height: 100px;
 	width: 750px;
-	border: 1px solid red;
+	border: 0px solid red;
 	text-align: center;
 	justify-content: center;
 	font-size: 100px;
@@ -21,13 +21,13 @@ header {
 	margin: 10px auto;
 	height: 125px;
 	width: auto;
-	border: 1px solid blue;
+	border: 0px solid blue;
 	display: flex;
 	justify-content: space-between;
 }
 
 .p1ScoreBox {
-	border: 2px solid blue;
+	border: 0px solid blue;
 	height: 125px;
 	width: 125px;
 	margin: 0px 100px;
@@ -39,14 +39,14 @@ header {
 #p1Row {
 	color: white;
 	background-color: black;
-	border: 2px solid white;
+	border: 0px solid white;
 	font-family: Papyrus;
 	font-size: 18px;
 	opacity: 0.65;
 }
 
 #p1Score {
-	border: 1px solid black;
+	border: 0px solid black;
 	font-size: 75px;
 	color: white;
 	justify-content: center;
@@ -55,7 +55,7 @@ header {
 
 .winnerTicker {
 	margin: 25px auto;
-	border: 2px solid blue;
+	border: 0px solid blue;
 	height: 75px;
 	width: 350px;
 	text-align: center;
@@ -64,7 +64,7 @@ header {
 }
 
 .compScoreBox {
-	border: 2px solid blue;
+	border: 0px solid blue;
 	height: 125px;
 	width: 125px;
 	margin: 0px 100px;
@@ -76,14 +76,14 @@ header {
 #compRow {
 	color: white;
 	background-color: black;
-	border: 2px solid white;
+	border: 0px solid white;
 	font-family: Papyrus;
 	font-size: 18px;
 	opacity: 0.65;
 }
 
 #compScore {
-	border: 1px solid black;
+	border: 0px solid black;
 	font-size: 75px;
 	color: white;
 	justify-content: center;
@@ -94,7 +94,7 @@ header {
 	margin: 20px 20px;
 	height: 275px;
 	width: auto;
-	border: 1px solid green;
+	border: 0px solid green;
 	display: flex;
 	justify-content: space-between;
 }
@@ -114,7 +114,7 @@ header {
 }
 */
 .player1 {
-	border: 2px solid green;
+	border: 0px solid green;
 	border-radius: 15px;
 	background: url(https://s-media-cache-ak0.pinimg.com/236x/58/17/85/581785ed38d3e41c25a22163c845abec.jpg) no-repeat;
 	background-position: center;
@@ -124,7 +124,7 @@ header {
 }
 
 .comp1 {
-	border: 2px solid green;
+	border: 0px solid green;
 	border-radius: 15px;
 	background: url(https://s-media-cache-ak0.pinimg.com/236x/f8/60/22/f86022bc63eb9eca83eba7465646bff9.jpg) no-repeat;
 	background-position: center;
@@ -146,7 +146,7 @@ header {
 	margin: 5px 150px;
 	height: 100px;
 	width: auto;
-	border: 1px solid orange;
+	border: 0px solid orange;
 	font-family: futura;
 	font-size: 15px;
 	display: flex;
@@ -155,7 +155,7 @@ header {
 
 #buttons div {
 	display: inline-block;
-	border: 2px solid #585858;
+	border: 0px solid #585858;
 	width: 275px;
 	height: 50px;
 	text-align: center;
