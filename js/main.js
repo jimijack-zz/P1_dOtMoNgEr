@@ -109,7 +109,12 @@ function render() {
     $("#compScore").html(compScore.toString());
     $(".player1 img").attr("src", (cards[playerCard].image));
     $(".comp1 img").attr("src", (cards[compCard].image));
-}
+    if (cards[playerCard].rank > cards[compCard].rank) {
+      $(".winnerTicker").html("Player Wins");
+    } else if (cards[playerCard].rank < cards[compCard].rank) {
+      $(".winnerTicker").html("Comp Wins");
+    }
+};
 
 
 //When the game ("WAR") ends.
