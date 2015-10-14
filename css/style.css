@@ -6,17 +6,17 @@ body {
 
 header {
 	margin: 5px auto;
-	height: 100px;
+	height: 125px;
 	width: 750px;
 	border: 0px solid red;
 	text-align: center;
 	justify-content: center;
-	font-size: 125px;
+	font-size: 100px;
 	color: white;
 	background: url(https://i.imgur.com/14fhMVB.png) no-repeat;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	font-family: Copperplate;
+	font-family: And Then Some;
 	/*text-shadow: 1px 1px 1px #000;*/
 }
 
@@ -31,6 +31,7 @@ header {
 
 .p1ScoreBox {
 	border: 0px solid blue;
+	border-radius: 5px;
 	height: 125px;
 	width: 125px;
 	margin: 0px 100px;
@@ -64,13 +65,17 @@ header {
 	text-align: center;
 	font-family: Bleeding Cowboys;
 	color: #610B0B;
-	text-shadow: 2px 2px 1px white;
+	background: url(https://i.imgur.com/3rWkbZM.png) no-repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	/*text-shadow: 2px 2px 1px white;*/
 	font-size: 35px;
 	padding-top: 10px;
 }
 
 .compScoreBox {
 	border: 0px solid blue;
+	border-radius: 5px;
 	height: 125px;
 	width: 125px;
 	margin: 0px 100px;

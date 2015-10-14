@@ -64,19 +64,34 @@ $(document).ready(function() {
     {name: "c02", rank: 1, image: "cards/card-starter/images/clubs/clubs-r02.svg"},
   ];
 
+var playerScore = 0
+var $p1ScoreCard =  $("#p1Score");
+var compScore = 0
+var $compScoreCard = $("#compScore");
+
+
 
 // Go To War Button
-$(".b1").click(function goToWar() {
+
+$(".b1").click(goToWar)
+
+
+  function goToWar() {
   playerCard = compCard = null;
-  playerScore = compScore = 0;
+  playerScore = 0;
+  compScore = 0;
   warOver = false;
+  $("#p1Score").html(playerScore);
+  $("#compScore").html(compScore);
   cards = _.shuffle(cards);
   $(".b2").removeAttr("disabled");
   $(".winnerTicker").html("Let the Battles BEGIN!");
-});
+  render();
+};
 
 
 // Battle Button
+
 $(".b2").click(function battle() {
 	if (playerCard === null) {
       playerCard = 0;
@@ -91,9 +106,7 @@ $(".b2").click(function battle() {
   gameOver();
 });
 
-//Scoring variables and functions below
-var playerScore = $("#p1Score");
-var compScore = $("#compScore");
+//Scoring function
 
 function score() {
     if (cards[playerCard].rank > cards[compCard].rank) {
@@ -106,8 +119,8 @@ function score() {
 //Rendering scores and winner
 
 function render() {
-    $("#playerScore").html(playerScore.toString());
-    $("#compScore").html(compScore.toString());
+    $("#playerScore").html(playerScore);
+    $("#compScore").html(compScore);
     $(".player1 img").attr("src", (cards[playerCard].image));
     $(".comp1 img").attr("src", (cards[compCard].image));
     if (cards[playerCard].rank > cards[compCard].rank) {
@@ -119,98 +132,31 @@ function render() {
 
 
 //When the game ("WAR") ends.
+
 function gameOver() {
     if (playerScore === 21) {
       $(".winnerTicker").html("WAR is WON. Way to Kill 'em Player1.");
-      $("#title").html("PLAYER1");
+      $("#title").html("PLAYER!!!");
+      warOver = true;
     } else if (compScore === 21) {
         $(".winnerTicker").html("WAR is WON... by the Comp. Get it together Player1.");
-        $("#title").html("COMPUTER");
+        $("#title").html("COM-PEW-TORRR!!!");
+        warOver = true;
     }
-  //if (warOver = true) && (playerScore > compScore){
-  //  alert("Player1 destroyed you.")
-  //} else if (warOver = true) && (playerScore < compScore) {
-  //  alert("Comp1 destroyed you.")
-  //} else {
-  //  warOver = false;
-  //}
+    reset();
 };
 
 
-//if left score is greater than right score, display winner left, else winner right.
+// Resetting the game.
 
-//score function last
-//score render battle, 
+function reset() {
+    
+};
 
-var playerCard = 0;
-var compCard = 51;
+//var playerCard = 0;
+//var compCard = 51;
  // console.log(cardRank[cards[playerCard]] > cardRank[cards[compCard]]);
 
-  console.log((cards[playerCard]) < (cards[compCard]));
-
-//  var cardValue = function(card) {
-//    return cards.indexOf(card);
-//  };
-
-//  dealDeck = function() {
-//    return cards;
-//  }
-
-//  resetDeckOfCards = function() {
-//    deckIsShuffled = false;
-//    return deckOfCards = dealDeck();
-//  }
-
-//  shuffle = function() {
-//    deckIsShuffled = true;
-//    return deckOfCards = _.shuffle(deckOfCards);
-//  };
-
-//  sort = function() {
-//    deckIsShuffled = false;
-//    return deckOfCards = _.sortBy(deckOfCards, cardValue);
-//  };
-
-//  pickRandom = function() {
-//    var card = _.sample(deckOfCards);
-//    deckOfCards = _.remove(deckOfCards, function(c) { return c !== card; });
-//    return card;
-//  };
-
-//  resetDeckOfCards();
-
-
-//var cardValue = function(card) {
-  //  return cards.indexOf(card);
-  //};
-	
-
-
-//	$('.b1').click(function () {
-//    	alert('Shuffle Button clicked');
-//	});
-
-
-//	$('.b2').click(function () {
-//    	alert('Battle Button clicked');
-//	});
-
-//	$('.b3').click(function () {
-//    	alert('Deal Button clicked');
-//	});
-
-// });
-
-
-
-//function compare(a, b) {
-//  if (a is less than b by some ordering criterion) {
-//    return -1;
-//  }
-//  if (a is greater than b by the ordering criterion) {
-//    return 1;
-//  }
-//  // a must be equal to b
-//  return 0;
+  //console.log((cards[playerCard]) < (cards[compCard]));
 
 });
