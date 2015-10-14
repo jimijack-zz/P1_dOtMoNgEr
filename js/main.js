@@ -88,6 +88,31 @@ $(".b2").click(function battle() {
     }
 });
 
+//Scoring variables and functions below
+var playerScore = $("#p1Score");
+var compScore = $("#compScore");
+
+function score() {
+    for (i = 0; i < cards.length; i += 1) {
+    playerScore = playerScore + cards[i];
+  } if playerCard > compCard {
+    playerScore += 1;
+  } else if playerCard < compCard {
+    compScore += 1;
+  } else {
+    warOver = true;
+  }
+});
+
+//Rendering scores and winner
+var winner = $("#winnerTicker");
+
+function render() {
+  
+}
+
+
+//When the game ("WAR") ends.
 function gameOver() {
   if (warOver = true) && (playerScore > compScore){
     alert("Player1 destroyed you.")
