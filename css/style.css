@@ -11,10 +11,13 @@ header {
 	border: 0px solid red;
 	text-align: center;
 	justify-content: center;
-	font-size: 100px;
+	font-size: 125px;
 	color: white;
+	background: url(https://i.imgur.com/14fhMVB.png) no-repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	font-family: Copperplate;
-	text-shadow: 1px 1px 1px #000;
+	/*text-shadow: 1px 1px 1px #000;*/
 }
 
 #top {
@@ -45,7 +48,7 @@ header {
 	opacity: 0.65;
 }
 
-#p1Score {
+#playerScore {
 	border: 0px solid black;
 	font-size: 75px;
 	color: white;

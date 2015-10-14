@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
 // create globally accessible variables
-  var playerCard,
-      compCard,
+  var playerCard = null,
+      compCard = null,
       playerScore,
       compScore,
       warOver;
@@ -65,27 +65,27 @@ $(document).ready(function() {
   ];
 
 
-
+// Go To War Button
 $(".b1").click(function goToWar() {
   playerCard = compCard = null;
   playerScore = compScore = null;
   warOver = false;
-  _.shuffle(cards);
+  cards = _.shuffle(cards);
+  $(".b2").removeAttr("disabled");
 });
 
 
+// Battle Button
 $(".b2").click(function battle() {
-	if (playerCard = null) {
-      playerCard = (cards[0]);
-      compCard = (cards[51]);
+	if (playerCard === null) {
+      playerCard = 0;
+      compCard = 51;
   } else {
-  playerCard += 1;
-  compCard += 1;
-    } if (playerCard = (cards[25])) {
-      warOver = true;
-    } else {
-      warOver = false;
-    }
+    playerCard += 1;
+    compCard -= 1;
+  }
+  score();
+  if (playerCard === 25) warOver = true;
 });
 
 //Scoring variables and functions below
@@ -93,34 +93,32 @@ var playerScore = $("#p1Score");
 var compScore = $("#compScore");
 
 function score() {
-    for (i = 0; i < cards.length; i += 1) {
-    playerScore = playerScore + cards[i];
-  } if playerCard > compCard {
-    playerScore += 1;
-  } else if playerCard < compCard {
-    compScore += 1;
-  } else {
-    warOver = true;
-  }
-});
+    if (cards[playerCard].rank > cards[compCard].rank) {
+      playerScore++;
+    } else {
+      compScore++;
+    }
+    $("#playerScore").html(playerScore.toString());
+    $("#compScore").html(compScore.toString());
+}
 
 //Rendering scores and winner
 var winner = $("#winnerTicker");
 
 function render() {
-  
+
 }
 
 
 //When the game ("WAR") ends.
 function gameOver() {
-  if (warOver = true) && (playerScore > compScore){
-    alert("Player1 destroyed you.")
-  } else if (warOver = true) && (playerScore < compScore) {
-    alert("Comp1 destroyed you.")
-  } else {
-    warOver = false;
-  }
+  //if (warOver = true) && (playerScore > compScore){
+  //  alert("Player1 destroyed you.")
+  //} else if (warOver = true) && (playerScore < compScore) {
+  //  alert("Comp1 destroyed you.")
+  //} else {
+  //  warOver = false;
+  //}
 }
 
 
