@@ -61,14 +61,14 @@ $(document).ready(function() {
     {name: "s02", rank: 4, image: "cards/card-starter/images/spades/spades-r02.svg"},
     {name: "d02", rank: 3, image: "cards/card-starter/images/hearts/hearts-r02.svg"},
     {name: "h02", rank: 2, image: "cards/card-starter/images/diamonds/diamonds-r02.svg"},
-    {name: "c02", rank: 1, image: "cards/card-starter/images/clubds/clubs-r02.svg"},
+    {name: "c02", rank: 1, image: "cards/card-starter/images/clubs/clubs-r02.svg"},
   ];
 
 
 // Go To War Button
 $(".b1").click(function goToWar() {
   playerCard = compCard = null;
-  playerScore = compScore = null;
+  playerScore = compScore = 0;
   warOver = false;
   cards = _.shuffle(cards);
   $(".b2").removeAttr("disabled");
@@ -86,6 +86,7 @@ $(".b2").click(function battle() {
   }
   score();
   if (playerCard === 25) warOver = true;
+  render();
 });
 
 //Scoring variables and functions below
@@ -98,15 +99,16 @@ function score() {
     } else {
       compScore++;
     }
-    $("#playerScore").html(playerScore.toString());
-    $("#compScore").html(compScore.toString());
-}
+};
 
 //Rendering scores and winner
 var winner = $("#winnerTicker");
 
 function render() {
-
+    $("#playerScore").html(playerScore.toString());
+    $("#compScore").html(compScore.toString());
+    $(".player1 img").attr("src", (cards[playerCard].image));
+    $(".comp1 img").attr("src", (cards[compCard].image));
 }
 
 

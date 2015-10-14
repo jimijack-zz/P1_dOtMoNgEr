@@ -63,7 +63,7 @@ header {
 	width: 350px;
 	text-align: center;
 	font-family: Papyrus;
-	font-size: 65px;
+	font-size: 35px;
 }
 
 .compScoreBox {
@@ -116,26 +116,26 @@ header {
 	text-align: center;
 }
 */
-.player1 {
+.player1 img {
 	border: 0px solid green;
 	border-radius: 15px;
-	background: url(https://s-media-cache-ak0.pinimg.com/236x/58/17/85/581785ed38d3e41c25a22163c845abec.jpg) no-repeat;
-	background-position: center;
 	width: 200px;
 	height: 275px;
 	text-align: center;
 }
+/*background: url(https://s-media-cache-ak0.pinimg.com/236x/58/17/85/581785ed38d3e41c25a22163c845abec.jpg) no-repeat;
+  background-position: center;*/
 
-.comp1 {
+.comp1 img {
 	border: 0px solid green;
 	border-radius: 15px;
-	background: url(https://s-media-cache-ak0.pinimg.com/236x/f8/60/22/f86022bc63eb9eca83eba7465646bff9.jpg) no-repeat;
-	background-position: center;
 	width: 200px;
 	height: 275px;
 	text-align: center;
 }
-/**
+/*	background: url(https://s-media-cache-ak0.pinimg.com/236x/f8/60/22/f86022bc63eb9eca83eba7465646bff9.jpg) no-repeat;
+	background-position: center;*/
+/*
 #board div:nth-child(4) {
 	border: 1px solid green;
 	width: 85px;
