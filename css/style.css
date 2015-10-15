@@ -72,7 +72,7 @@ header {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	/*text-shadow: 2px 2px 1px white;*/
-	font-size: 35px;
+	font-size: 30px;
 	padding-top: 10px;
 }
 
@@ -111,7 +111,7 @@ header {
 	margin: 20px 20px;
 	height: 275px;
 	width: auto;
-	border: 0px solid green;
+	border: 1px solid green;
 	display: flex;
 	justify-content: space-between;
 }
@@ -120,16 +120,30 @@ header {
 	display: inline-block;
 }
 
-/**
+
 #board div:first-child {
 	border: 1px solid green;
-	width: 85px;
-	height: 250px;
+	margin: 10px 25px;
+	width: 100px;
+	height: 255px;
 	font-size: 20px;
 	color: gray;
 	text-align: center;
 }
-*/
+
+.playerTieCards table {
+	border: 1px solid green;
+	width: 100px;
+	height: 255px;
+}
+
+.tieRows td {
+	border: 1px solid red;
+	width: 100px
+	height: 80px;
+	justify-content: center;
+}
+
 .player1 img {
 	border: 0px solid green;
 	border-radius: 15px;
@@ -149,16 +163,23 @@ header {
 }
 /*	background: url(https://s-media-cache-ak0.pinimg.com/236x/f8/60/22/f86022bc63eb9eca83eba7465646bff9.jpg) no-repeat;
 	background-position: center;*/
-/*
+
 #board div:nth-child(4) {
 	border: 1px solid green;
-	width: 85px;
-	height: 250px;
+	margin: 10px 25px;
+	width: 100px;
+	height: 255px;
 	font-size: 20px;
 	color: gray;
 	text-align: center;
 }
-*/
+
+.compTieCards table {
+	border: 1px solid green;
+	width: 100px;
+	height: 255px;
+}
+
 #buttons {
 	margin: 5px 150px;
 	height: 100px;
