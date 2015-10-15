@@ -117,7 +117,34 @@ function score() {
     } else {
       compScore++;
     }
+    if (cards[playerCard].rank === cards[compCard].rank) {
+      tieBreaker();
+    }
 };
+
+//TieBreaker function
+
+function tieBreaker() {
+  $("#pTCard1").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
+  $("#pTCard2").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
+  $("#pTCard3").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
+  $("#cTCard1").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
+  $("#cTCard1").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
+  $("#cTCard1").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
+  $(".b2").click(function battleTie() {
+    if (playerCard === null) {
+      playerCard = 0;
+      compCard = 51;
+    } else {
+      playerCard += 1;
+      compCard -= 1;
+    }
+    score();
+    if (playerCard === 25) warOver = true;
+    renderTie();
+    gameOver();  
+  });
+}; 
 
 //Rendering scores and winner
 
@@ -133,6 +160,59 @@ function render() {
     }
 };
 
+function renderTie () {
+    $("#playerScore").html(playerScore);
+    $("#compScore").html(compScore);
+    $(".pTCard1 img").attr("src", (cards[playerCard].image));
+    $(".cTCard1 img").attr("src", (cards[compCard].image));
+    if (cards[playerCard].rank > cards[compCard].rank) {
+      $(".winnerTicker").html("PlayOR is VicTOR...");
+      playerScore+2;
+      render();
+    } else if (cards[playerCard].rank < cards[compCard].rank) {
+        $(".winnerTicker").html("Comm-PEW-Torr...");
+        compScore+2;
+        render();
+      } else {
+          renderTie2();
+        }
+};
+
+function renderTie2 () {
+    $("#playerScore").html(playerScore);
+    $("#compScore").html(compScore);
+    $(".pTCard2 img").attr("src", (cards[playerCard].image));
+    $(".cTCard2 img").attr("src", (cards[compCard].image));
+    if (cards[playerCard].rank > cards[compCard].rank) {
+      $(".winnerTicker").html("PlayOR is VicTOR...");
+      playerScore+4;
+      reder();
+    } else if (cards[playerCard].rank < cards[compCard].rank) {
+        $(".winnerTicker").html("Comm-PEW-Torr...");
+        compScore+4;
+        render();
+      } else {
+          renderTie3();
+        }
+};
+
+function renderTie3 () {
+    $("#playerScore").html(playerScore);
+    $("#compScore").html(compScore);
+    $(".pTCard3 img").attr("src", (cards[playerCard].image));
+    $(".cTCard3 img").attr("src", (cards[compCard].image));
+    if (cards[playerCard].rank > cards[compCard].rank) {
+      $(".winnerTicker").html("PlayOR is VicTOR...");
+      playerScore+6;
+      render();
+    } else if (cards[playerCard].rank < cards[compCard].rank) {
+        $(".winnerTicker").html("Comm-PEW-Torr...");
+        compScore+6;
+        render();
+      } else {
+         render();
+        }
+};
 
 //When the game ("WAR") ends.
 
