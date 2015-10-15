@@ -81,11 +81,14 @@ $(".b1").click(goToWar)
   playerScore = 0;
   compScore = 0;
   warOver = false;
+  $("#player1").attr("src", "https://i.imgur.com/kYrVfED.jpg");
+  $("#comp1").attr("src", "https://i.imgur.com/Vd3oJxp.jpg");
   $("#p1Score").html(playerScore);
   $("#compScore").html(compScore);
   cards = _.shuffle(cards);
   $(".b2").removeAttr("disabled");
   $(".winnerTicker").html("Let the Battles BEGIN!");
+  reset();
   render();
 };
 
@@ -136,21 +139,23 @@ function render() {
 function gameOver() {
     if (playerScore === 21) {
       $(".winnerTicker").html("WAR is WON. Way to Kill 'em Player1.");
-      $("#title").html("PLAYER!!!");
       warOver = true;
     } else if (compScore === 21) {
         $(".winnerTicker").html("WAR is WON... by the Comp. Get it together Player1.");
-        $("#title").html("COM-PEW-TORRR!!!");
         warOver = true;
     }
-    reset();
+    
 };
 
 
 // Resetting the game.
 
 function reset() {
-    
+  playerScore = 0;
+  compScore = 0;
+  $(".player1").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
+  $(".comp1").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
+  cards = _.shuffle(cards);
 };
 
 //var playerCard = 0;
