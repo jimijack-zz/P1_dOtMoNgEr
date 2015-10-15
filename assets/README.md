@@ -83,4 +83,4 @@
 	- [x] As a developer, if **value** of "**playerCard**" is greater than the value of "**computerCard**", *display "Winner is (player)!" in the **.winnerTicker** box* and increase "**playerScore**" +1.
 		- [x] else (do the same for computer).
 - [x] As a developer, when all cards in the array have been played, alert "**(Player or Computer) wins the WAR, damn dotMongers...**".
-	- [ ] As a player, click "**OK**", bring up new **alert** "Click **Go To War** for new game."
+	- [x] As a player, when the war is won, click **Go To War** for new game."

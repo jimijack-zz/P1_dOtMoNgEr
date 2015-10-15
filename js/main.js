@@ -127,9 +127,9 @@ function render() {
     $(".player1 img").attr("src", (cards[playerCard].image));
     $(".comp1 img").attr("src", (cards[compCard].image));
     if (cards[playerCard].rank > cards[compCard].rank) {
-      $(".winnerTicker").html("Player Wins");
+      $(".winnerTicker").html("PlayOR is VicTOR...");
     } else if (cards[playerCard].rank < cards[compCard].rank) {
-        $(".winnerTicker").html("Comp Wins");
+        $(".winnerTicker").html("Comm-PEW-Torr...");
     }
 };
 
@@ -138,13 +138,12 @@ function render() {
 
 function gameOver() {
     if (playerScore === 21) {
-      $(".winnerTicker").html("WAR is WON. Way to Kill 'em Player1.");
+      $(".winnerTicker").html("WAR is WON. Way to Kill 'em Player.");
       warOver = true;
     } else if (compScore === 21) {
-        $(".winnerTicker").html("WAR is WON... by the Comp. Get it together Player1.");
+        $(".winnerTicker").html("WAR is WON... by the Comp. Get it together Player.");
         warOver = true;
     }
-    
 };
 
 
