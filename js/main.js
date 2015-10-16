@@ -10,58 +10,58 @@ $(document).ready(function() {
 //================
   
   var cards = [
-    {name: "sA", rank: 52, image: "./cards/card-starter/images/spades/spades-A.svg"},
-    {name: "hA", rank: 52, image: "./cards/card-starter/images/hearts/hearts-A.svg"},
-    {name: "dA", rank: 52, image: "./cards/card-starter/images/diamonds/diamonds-A.svg"},
-    {name: "cA", rank: 52, image: "./cards/card-starter/images/clubs/clubs-A.svg"},
-    {name: "sK", rank: 48, image: "./cards/card-starter/images/spades/spades-K.svg"},
-    {name: "hK", rank: 48, image: "./cards/card-starter/images/hearts/hearts-K.svg"},
-    {name: "dK", rank: 48, image: "./cards/card-starter/images/diamonds/diamonds-K.svg"},
-    {name: "cK", rank: 48, image: "./cards/card-starter/images/clubs/clubs-K.svg"},
-    {name: "sQ", rank: 44, image: "./cards/card-starter/images/spades/spades-Q.svg"},
-    {name: "hQ", rank: 44, image: "./cards/card-starter/images/hearts/hearts-Q.svg"},
-    {name: "dQ", rank: 44, image: "./cards/card-starter/images/diamonds/diamonds-Q.svg"},
-    {name: "cQ", rank: 44, image: "./cards/card-starter/images/clubs/clubs-Q.svg"},
-    {name: "sJ", rank: 40, image: "./cards/card-starter/images/spades/spades-J.svg"},
-    {name: "hJ", rank: 40, image: "./cards/card-starter/images/hearts/hearts-J.svg"},
-    {name: "dJ", rank: 40, image: "./cards/card-starter/images/diamonds/diamonds-J.svg"},
-    {name: "cJ", rank: 40, image: "./cards/card-starter/images/clubs/clubs-J.svg"},
-    {name: "s10", rank: 36, image: "./cards/card-starter/images/spades/spades-r10.svg"},
-    {name: "h10", rank: 36, image: "./cards/card-starter/images/hearts/hearts-r10.svg"},
-    {name: "d10", rank: 36, image: "./cards/card-starter/images/diamonds/diamonds-r10.svg"},
-    {name: "c10", rank: 36, image: "./cards/card-starter/images/clubs/clubs-r10.svg"},
-    {name: "s09", rank: 32, image: "./cards/card-starter/images/spades/spades-r09.svg"},
-    {name: "h09", rank: 32, image: "./cards/card-starter/images/hearts/hearts-r09.svg"},
-    {name: "d09", rank: 32, image: "./cards/card-starter/images/diamonds/diamonds-r09.svg"},
-    {name: "c09", rank: 32, image: "./cards/card-starter/images/clubs/clubs-r09.svg"},
-    {name: "s08", rank: 28, image: "./cards/card-starter/images/spades/spades-r08.svg"},
-    {name: "h08", rank: 28, image: "./cards/card-starter/images/hearts/hearts-r08.svg"},
-    {name: "d08", rank: 28, image: "./cards/card-starter/images/diamonds/diamonds-r08.svg"},
-    {name: "c08", rank: 28, image: "./cards/card-starter/images/clubs/clubs-r08.svg"},
-    {name: "s07", rank: 24, image: "./cards/card-starter/images/spades/spades-r07.svg"},
-    {name: "h07", rank: 24, image: "./cards/card-starter/images/hearts/hearts-r07.svg"},
-    {name: "d07", rank: 24, image: "./cards/card-starter/images/diamonds/diamonds-r07.svg"},
-    {name: "c07", rank: 24, image: "./cards/card-starter/images/clubs/clubs-r07.svg"},
-    {name: "s06", rank: 20, image: "./cards/card-starter/images/spades/spades-r06.svg"},
-    {name: "h06", rank: 20, image: "./cards/card-starter/images/hearts/hearts-r06.svg"},
-    {name: "d06", rank: 20, image: "./cards/card-starter/images/diamonds/diamonds-r06.svg"},
-    {name: "c06", rank: 20, image: "./cards/card-starter/images/clubs/clubs-r06.svg"},
-    {name: "s05", rank: 16, image: "./cards/card-starter/images/spades/spades-r05.svg"},
-    {name: "h05", rank: 16, image: "./cards/card-starter/images/hearts/hearts-r05.svg"},
-    {name: "d05", rank: 16, image: "./cards/card-starter/images/diamonds/diamonds-r05.svg"},
-    {name: "c05", rank: 16, image: "./cards/card-starter/images/clubs/clubs-r05.svg"},
-    {name: "s04", rank: 12, image: "./cards/card-starter/images/spades/spades-r04.svg"},
-    {name: "h04", rank: 12, image: "./cards/card-starter/images/hearts/hearts-r04.svg"},
-    {name: "d04", rank: 12, image: "./cards/card-starter/images/diamonds/diamonds-r04.svg"},
-    {name: "c04", rank: 12, image: "./cards/card-starter/images/clubs/clubs-r04.svg"},
-    {name: "s03", rank: 8, image: "./cards/card-starter/images/spades/spades-r03.svg"},
-    {name: "h03", rank: 8, image: "./cards/card-starter/images/hearts/hearts-r03.svg"},
-    {name: "d03", rank: 8, image: "./cards/card-starter/images/diamonds/diamonds-r03.svg"},
-    {name: "c03", rank: 8, image: "./cards/card-starter/images/clubs/clubs-r03.svg"},
-    {name: "s02", rank: 4, image: "./cards/card-starter/images/spades/spades-r02.svg"},
-    {name: "d02", rank: 4, image: "./cards/card-starter/images/hearts/hearts-r02.svg"},
-    {name: "h02", rank: 4, image: "./cards/card-starter/images/diamonds/diamonds-r02.svg"},
-    {name: "c02", rank: 4, image: "./cards/card-starter/images/clubs/clubs-r02.svg"},
+    {name: "sA", rank: 52, image: "./cards/images/spades/spades-A.svg"},
+    {name: "hA", rank: 52, image: "./cards/images/hearts/hearts-A.svg"},
+    {name: "dA", rank: 52, image: "./cards/images/diamonds/diamonds-A.svg"},
+    {name: "cA", rank: 52, image: "./cards/images/clubs/clubs-A.svg"},
+    {name: "sK", rank: 48, image: "./cards/images/spades/spades-K.svg"},
+    {name: "hK", rank: 48, image: "./cards/images/hearts/hearts-K.svg"},
+    {name: "dK", rank: 48, image: "./cards/images/diamonds/diamonds-K.svg"},
+    {name: "cK", rank: 48, image: "./cards/images/clubs/clubs-K.svg"},
+    {name: "sQ", rank: 44, image: "./cards/images/spades/spades-Q.svg"},
+    {name: "hQ", rank: 44, image: "./cards/images/hearts/hearts-Q.svg"},
+    {name: "dQ", rank: 44, image: "./cards/images/diamonds/diamonds-Q.svg"},
+    {name: "cQ", rank: 44, image: "./cards/images/clubs/clubs-Q.svg"},
+    {name: "sJ", rank: 40, image: "./cards/images/spades/spades-J.svg"},
+    {name: "hJ", rank: 40, image: "./cards/images/hearts/hearts-J.svg"},
+    {name: "dJ", rank: 40, image: "./cards/images/diamonds/diamonds-J.svg"},
+    {name: "cJ", rank: 40, image: "./cards/images/clubs/clubs-J.svg"},
+    {name: "s10", rank: 36, image: "./cards/images/spades/spades-r10.svg"},
+    {name: "h10", rank: 36, image: "./cards/images/hearts/hearts-r10.svg"},
+    {name: "d10", rank: 36, image: "./cards/images/diamonds/diamonds-r10.svg"},
+    {name: "c10", rank: 36, image: "./cards/images/clubs/clubs-r10.svg"},
+    {name: "s09", rank: 32, image: "./cards/images/spades/spades-r09.svg"},
+    {name: "h09", rank: 32, image: "./cards/images/hearts/hearts-r09.svg"},
+    {name: "d09", rank: 32, image: "./cards/images/diamonds/diamonds-r09.svg"},
+    {name: "c09", rank: 32, image: "./cards/images/clubs/clubs-r09.svg"},
+    {name: "s08", rank: 28, image: "./cards/images/spades/spades-r08.svg"},
+    {name: "h08", rank: 28, image: "./cards/images/hearts/hearts-r08.svg"},
+    {name: "d08", rank: 28, image: "./cards/images/diamonds/diamonds-r08.svg"},
+    {name: "c08", rank: 28, image: "./cards/images/clubs/clubs-r08.svg"},
+    {name: "s07", rank: 24, image: "./cards/images/spades/spades-r07.svg"},
+    {name: "h07", rank: 24, image: "./cards/images/hearts/hearts-r07.svg"},
+    {name: "d07", rank: 24, image: "./cards/images/diamonds/diamonds-r07.svg"},
+    {name: "c07", rank: 24, image: "./cards/images/clubs/clubs-r07.svg"},
+    {name: "s06", rank: 20, image: "./cards/images/spades/spades-r06.svg"},
+    {name: "h06", rank: 20, image: "./cards/images/hearts/hearts-r06.svg"},
+    {name: "d06", rank: 20, image: "./cards/images/diamonds/diamonds-r06.svg"},
+    {name: "c06", rank: 20, image: "./cards/images/clubs/clubs-r06.svg"},
+    {name: "s05", rank: 16, image: "./cards/images/spades/spades-r05.svg"},
+    {name: "h05", rank: 16, image: "./cards/images/hearts/hearts-r05.svg"},
+    {name: "d05", rank: 16, image: "./cards/images/diamonds/diamonds-r05.svg"},
+    {name: "c05", rank: 16, image: "./cards/images/clubs/clubs-r05.svg"},
+    {name: "s04", rank: 12, image: "./cards/images/spades/spades-r04.svg"},
+    {name: "h04", rank: 12, image: "./cards/images/hearts/hearts-r04.svg"},
+    {name: "d04", rank: 12, image: "./cards/images/diamonds/diamonds-r04.svg"},
+    {name: "c04", rank: 12, image: "./cards/images/clubs/clubs-r04.svg"},
+    {name: "s03", rank: 8, image: "./cards/images/spades/spades-r03.svg"},
+    {name: "h03", rank: 8, image: "./cards/images/hearts/hearts-r03.svg"},
+    {name: "d03", rank: 8, image: "./cards/images/diamonds/diamonds-r03.svg"},
+    {name: "c03", rank: 8, image: "./cards/images/clubs/clubs-r03.svg"},
+    {name: "s02", rank: 4, image: "./cards/images/spades/spades-r02.svg"},
+    {name: "d02", rank: 4, image: "./cards/images/hearts/hearts-r02.svg"},
+    {name: "h02", rank: 4, image: "./cards/images/diamonds/diamonds-r02.svg"},
+    {name: "c02", rank: 4, image: "./cards/images/clubs/clubs-r02.svg"},
   ];
 
   var playerScore = 0
@@ -83,6 +83,12 @@ $(document).ready(function() {
     warOver = false;
     $("#player1").attr("src", "https://i.imgur.com/kYrVfED.jpg");
     $("#comp1").attr("src", "https://i.imgur.com/Vd3oJxp.jpg");
+    $(".pTCard1").attr("src", "http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png");
+    $(".cTCard1").attr("src", "http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png");
+    $(".pTCard2").attr("src", "http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png");
+    $(".cTCard2").attr("src", "http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png");
+    $(".pTCard3").attr("src", "http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png");
+    $(".cTCard3").attr("src", "http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png");
     $("#p1Score").html(playerScore);
     $("#compScore").html(compScore);
     cards = _.shuffle(cards);
@@ -112,19 +118,19 @@ $(document).ready(function() {
     }
   });
 
-  function battleTie() {
-      if (playerCard === null) {
-        playerCard = 0;
-        compCard = 51;
-      } else {
-          playerCard += 1;
-          compCard -= 1;
-        }
-      score();
-      if (playerCard === 25) warOver = true;
-        renderTie();
-        gameOver();  
-  };
+  //function battleTie() {
+  //    if (playerCard === null) {
+  //      playerCard = 0;
+  //      compCard = 51;
+  //    } else {
+  //        playerCard += 1;
+  //        compCard -= 1;
+  //      }
+  //    score();
+  //    if (playerCard === 25) warOver = true;
+  //      renderTie();
+  //      gameOver();  
+  //};
 
 //Scoring function
 
@@ -134,9 +140,9 @@ $(document).ready(function() {
       } else {
           compScore++;
         }
-      if (cards[playerCard].rank === cards[compCard].rank) {
-        tieBreaker();
-      }
+      //if (cards[playerCard].rank === cards[compCard].rank) {
+      //  tieBreaker();
+      //}
   };
 
 //TieBreaker function
@@ -239,18 +245,13 @@ $(document).ready(function() {
     compScore = 0;
     $(".player1").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
     $(".comp1").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
-    $(".pTCard1").html('<img src="http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png">');
-    $(".cTCard1").html('<img src="http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png">');
-    $(".pTCard2").html('<img src="http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png">');
-    $(".cTCard2").html('<img src="http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png">');
-    $(".pTCard3").html('<img src="http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png">');
-    $(".cTCard3").html('<img src="http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png">');
+    $(".pTCard1").attr("src", "http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png");
+    $(".cTCard1").attr("src", "http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png");
+    $(".pTCard2").attr("src", "http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png");
+    $(".cTCard2").attr("src", "http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png");
+    $(".pTCard3").attr("src", "http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png");
+    $(".cTCard3").attr("src", "http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png");
     cards = _.shuffle(cards);
   };
 
-//var playerCard = 0;
-//var compCard = 51;
- // console.log(cardRank[cards[playerCard]] > cardRank[cards[compCard]]);
-
-  //console.log((cards[playerCard]) < (cards[compCard]));
 });
