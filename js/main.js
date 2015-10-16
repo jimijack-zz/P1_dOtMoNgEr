@@ -64,96 +64,96 @@ $(document).ready(function() {
     {name: "c02", rank: 4, image: "cards/card-starter/images/clubs/clubs-r02.svg"},
   ];
 
-var playerScore = 0
-var $p1ScoreCard =  $("#p1Score");
-var compScore = 0
-var $compScoreCard = $("#compScore");
+  var playerScore = 0
+  var $p1ScoreCard =  $("#p1Score");
+  var compScore = 0
+  var $compScoreCard = $("#compScore");
 
 
 
 // Go To War Button
 
-$(".b1").click(goToWar)
+  $(".b1").click(goToWar)
 
 
   function goToWar() {
-  playerCard = compCard = null;
-  playerScore = 0;
-  compScore = 0;
-  warOver = false;
-  $("#player1").attr("src", "https://i.imgur.com/kYrVfED.jpg");
-  $("#comp1").attr("src", "https://i.imgur.com/Vd3oJxp.jpg");
-  $("#p1Score").html(playerScore);
-  $("#compScore").html(compScore);
-  cards = _.shuffle(cards);
-  $(".b2").removeAttr("disabled");
-  $(".winnerTicker").html("Let the Battles BEGIN!");
-  reset();
-  render();
-};
+    playerCard = compCard = null;
+    playerScore = 0;
+    compScore = 0;
+    warOver = false;
+    $("#player1").attr("src", "https://i.imgur.com/kYrVfED.jpg");
+    $("#comp1").attr("src", "https://i.imgur.com/Vd3oJxp.jpg");
+    $("#p1Score").html(playerScore);
+    $("#compScore").html(compScore);
+    cards = _.shuffle(cards);
+    $(".b2").removeAttr("disabled");
+    $(".winnerTicker").html("Let the Battles BEGIN!");
+    reset();
+    render();
+  };
 
 
 // Battle Button
 
-$(".b2").click(function battle() {
-	if (playerCard === null) {
-      playerCard = 0;
-      compCard = 51;
-  } else {
-    playerCard += 1;
-    compCard -= 1;
-  }
-  score();
-  if (playerCard === 25) warOver = true;
-    render();
-    gameOver();
-  if (cards[playerCard].rank === cards[compCard].rank) {
-      tieBreaker();
-    }
-});
-
-function battleTie() {
-    if (playerCard === null) {
+  $(".b2").click(function battle() {
+  	if (playerCard === null) {
       playerCard = 0;
       compCard = 51;
     } else {
-      playerCard += 1;
-      compCard -= 1;
+        playerCard += 1;
+        compCard -= 1;
     }
     score();
     if (playerCard === 25) warOver = true;
-    renderTie();
-    gameOver();  
-};
-
-//Scoring function
-
-function score() {
-    if (cards[playerCard].rank > cards[compCard].rank) {
-      playerScore++;
-    } else {
-      compScore++;
-    }
+      render();
+      gameOver();
     if (cards[playerCard].rank === cards[compCard].rank) {
       tieBreaker();
     }
-};
+  });
+
+  function battleTie() {
+      if (playerCard === null) {
+        playerCard = 0;
+        compCard = 51;
+      } else {
+          playerCard += 1;
+          compCard -= 1;
+        }
+      score();
+      if (playerCard === 25) warOver = true;
+        renderTie();
+        gameOver();  
+  };
+
+//Scoring function
+
+  function score() {
+      if (cards[playerCard].rank > cards[compCard].rank) {
+        playerScore++;
+      } else {
+          compScore++;
+        }
+      if (cards[playerCard].rank === cards[compCard].rank) {
+        tieBreaker();
+      }
+  };
 
 //TieBreaker function
 
-function tieBreaker() {
-  $("#pTCard1").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
-  $("#pTCard2").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
-  $("#pTCard3").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
-  $("#cTCard1").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
-  $("#cTCard2").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
-  $("#cTCard3").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
-  battleTie;
-}; 
+  function tieBreaker() {
+    $("#pTCard1").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
+    $("#pTCard2").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
+    $("#pTCard3").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
+    $("#cTCard1").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
+    $("#cTCard2").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
+    $("#cTCard3").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
+    battleTie;
+  }; 
 
 //Rendering scores and winner
 
-function render() {
+  function render() {
     $("#playerScore").html(playerScore);
     $("#compScore").html(compScore);
     $(".player1 img").attr("src", (cards[playerCard].image));
@@ -162,92 +162,95 @@ function render() {
       $(".winnerTicker").html("PlayOR is VicTOR...");
     } else if (cards[playerCard].rank < cards[compCard].rank) {
         $(".winnerTicker").html("Comm-PEW-Torr...");
-    }
-};
+      }
+  };
 
-function renderTie () {
-    $("#playerScore").html(playerScore);
-    $("#compScore").html(compScore);
-    $(".pTCard1 img").attr("src", (cards[playerCard].image));
-    $(".cTCard1 img").attr("src", (cards[compCard].image));
-    if (cards[playerCard].rank > cards[compCard].rank) {
-      $(".winnerTicker").html("PlayOR is VicTOR...");
-      playerScore+2;
-      //render();
-    } else if (cards[playerCard].rank < cards[compCard].rank) {
-        $(".winnerTicker").html("Comm-PEW-Torr...");
-        compScore+2;
-        render();
-      } else {
-          renderTie2();
-        }
-};
-
-function renderTie2 () {
-    $("#playerScore").html(playerScore);
-    $("#compScore").html(compScore);
-    $(".pTCard2 img").attr("src", (cards[playerCard].image));
-    $(".cTCard2 img").attr("src", (cards[compCard].image));
-    if (cards[playerCard].rank > cards[compCard].rank) {
-      $(".winnerTicker").html("PlayOR is VicTOR...");
-      playerScore+4;
-      //reder();
-    } else if (cards[playerCard].rank < cards[compCard].rank) {
-        $(".winnerTicker").html("Comm-PEW-Torr...");
-        compScore+4;
-        render();
-      } else {
-          renderTie3();
-        }
-};
-
-function renderTie3 () {
-    $("#playerScore").html(playerScore);
-    $("#compScore").html(compScore);
-    $(".pTCard3 img").attr("src", (cards[playerCard].image));
-    $(".cTCard3 img").attr("src", (cards[compCard].image));
-    if (cards[playerCard].rank > cards[compCard].rank) {
-      $(".winnerTicker").html("PlayOR is VicTOR...");
-      playerScore+6;
-      //render();
-    } else if (cards[playerCard].rank < cards[compCard].rank) {
-        $(".winnerTicker").html("Comm-PEW-Torr...");
-        compScore+6;
-        render();
-      } else {
-         render();
-        }
-};
+//  function renderTie () {
+////    $("#playerScore").html(playerScore);
+////    $("#compScore").html(compScore);
+////    $(".pTCard1 img").attr("src", (cards[playerCard].image));
+////    $(".cTCard1 img").attr("src", (cards[compCard].image));
+////    if (cards[playerCard].rank > cards[compCard].rank) {
+////      $(".winnerTicker").html("PlayOR is VicTOR...");
+////      playerScore+2;
+////        //render();
+////    } else if (cards[playerCard].rank < cards[compCard].rank) {
+////        $(".winnerTicker").html("Comm-PEW-Torr...");
+////        compScore+2;
+////        render();
+////      } else {
+////          renderTie2();
+////        }
+////  };
+////
+////  function renderTie2 () {
+////      $("#playerScore").html(playerScore);
+////      $("#compScore").html(compScore);
+////      $(".pTCard2 img").attr("src", (cards[playerCard].image));
+////      $(".cTCard2 img").attr("src", (cards[compCard].image));
+////      if (cards[playerCard].rank > cards[compCard].rank) {
+////        $(".winnerTicker").html("PlayOR is VicTOR...");
+////        playerScore+4;
+////        //reder();
+////      } else if (cards[playerCard].rank < cards[compCard].rank) {
+////          $(".winnerTicker").html("Comm-PEW-Torr...");
+////          compScore+4;
+////          render();
+////        } else {
+////            renderTie3();
+////          }
+////  };
+////
+////  function renderTie3 () {
+////      $("#playerScore").html(playerScore);
+////      $("#compScore").html(compScore);
+////      $(".pTCard3 img").attr("src", (cards[playerCard].image));
+////      $(".cTCard3 img").attr("src", (cards[compCard].image));
+////      if (cards[playerCard].rank > cards[compCard].rank) {
+////        $(".winnerTicker").html("PlayOR is VicTOR...");
+////        playerScore+6;
+////        //render();
+////      } else if (cards[playerCard].rank < cards[compCard].rank) {
+////          $(".winnerTicker").html("Comm-PEW-Torr...");
+////          compScore+6;
+////          render();
+////        } else {
+////           render();
+////          }
+//  };
 
 //When the game ("WAR") ends.
 
-function gameOver() {
-    if (playerScore === 21) {
-      $(".winnerTicker").html("WAR is WON. Way to Kill 'em Player.");
-      warOver = true;
-    } else if (compScore === 21) {
-        $(".winnerTicker").html("WAR is WON... by the Comp. Get it together Player.");
+  function gameOver() {
+      if (playerScore === 21) {
+        $(".winnerTicker").html("WAR is WON. Way to Kill 'em Player.");
         warOver = true;
-    }
-};
+      } else if (compScore === 21) {
+          $(".winnerTicker").html("WAR is WON... by the Comp. Get it together Player.");
+          warOver = true;
+        }
+  };
 
 
 // Resetting the game.
 
-function reset() {
-  playerScore = 0;
-  compScore = 0;
-  $(".player1").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
-  $(".comp1").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
-  $(".pTCard1").html('<img src="http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png">');
-  $(".cTCard1").html('<img src="http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png">')
-  cards = _.shuffle(cards);
-};
+  function reset() {
+    playerScore = 0;
+    compScore = 0;
+    $(".player1").html('<img src="https://i.imgur.com/kYrVfED.jpg">');
+    $(".comp1").html('<img src="https://i.imgur.com/Vd3oJxp.jpg">');
+    $(".pTCard1").html('<img src="http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png">');
+    $(".cTCard1").html('<img src="http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png">');
+    $(".pTCard2").html('<img src="http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png">');
+    $(".cTCard2").html('<img src="http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png">');
+    $(".pTCard3").html('<img src="http://www.tattoostime.com/images/470/celtic-tribal-triangle-tattoo-design.png">');
+    $(".cTCard3").html('<img src="http://www.cliparthut.com/clip-arts/528/celtic-knot-528537.png">');
+    cards = _.shuffle(cards);
+  };
 
 //var playerCard = 0;
 //var compCard = 51;
  // console.log(cardRank[cards[playerCard]] > cardRank[cards[compCard]]);
 
   //console.log((cards[playerCard]) < (cards[compCard]));
-
 });
