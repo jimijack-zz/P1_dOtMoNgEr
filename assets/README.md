@@ -67,6 +67,12 @@
 
 [ ] - 8.) In the event of a **tie**, player will **click "Battle / New Hand"** button to turn 3 cards from each to go to "**War**." These 3 cards will appear upside down on each side, and as the "Battle / New Hand" button is clicked, the **first winner will collect all 6 points** for the cards played.
 
+- [x] Design layout for three cards to be placed at either side of each players main card.
+- [x] Assign a function to place three cards face down when a tie occurs in main play area.
+- [ ] Write a function to allow the same battle button to designate a card in the array to be placed in the tie cards area in order one, two, three.
+	- [ ] If a win occurs, asign points to the winner accordingly.  If another tie occurs, move to the next card.
+	- [ ] Assign points to be tallied for each level, one, two, or three.
+- [ ] After the tie breaker is over, clear out the tiebreaker board with **Battle** button and resume play as normal.
 [x] - 9.) When a winner is declared after all cards played, **alert "Winner is ' '!"**
 
 [x] - 10.) Click "**Shuffle Cards**" to clear game, randomize deck and deal to players.
